@@ -1,0 +1,205 @@
+CREATE TABLE wx_tb_customer_head
+(
+  wx_tb_customer_id INT AUTO_INCREMENT
+  COMMENT '客户头表id'
+    PRIMARY KEY,
+  customer_name     VARCHAR(1000) NOT NULL
+  COMMENT '客户名称',
+  function_type     VARCHAR(100)  NOT NULL
+  COMMENT '功能类型--TODO',
+  function_des      VARCHAR(1000) NOT NULL
+  COMMENT '功能描述--TODO',
+  wx_tb_log_head_id INT           NOT NULL
+  COMMENT '日志头id'
+)
+  ENGINE = InnoDB;
+
+CREATE TABLE wx_tb_customer_info
+(
+  wx_tb_customer_info_id INT AUTO_INCREMENT
+  COMMENT '客户信息表id'
+    PRIMARY KEY,
+  wx_tb_customer_id      INT                           NOT NULL
+  COMMENT '客户头表id',
+  map_url                VARCHAR(100)                  NOT NULL
+  COMMENT '地图链接',
+  progress_url           VARCHAR(100)                  NOT NULL
+  COMMENT '进度链接',
+  add_url                VARCHAR(1000)                 NOT NULL
+  COMMENT '添加链接',
+  image_url              VARCHAR(100) DEFAULT '111111' NOT NULL
+  COMMENT '图片链接',
+  wx_tb_log_head_id      INT                           NOT NULL
+  COMMENT '日志头id',
+  CONSTRAINT fk_customer_info_id
+  FOREIGN KEY (wx_tb_customer_id) REFERENCES wx_tb_customer_head (wx_tb_customer_id)
+)
+  ENGINE = InnoDB;
+
+CREATE INDEX fk_customer_info_id
+  ON wx_tb_customer_info (wx_tb_customer_id);
+
+CREATE TABLE wx_tb_customer_users
+(
+  wx_tb_customer_users_id INT AUTO_INCREMENT
+  COMMENT '客户用户表id'
+    PRIMARY KEY,
+  wx_tb_customer_id       INT                      NOT NULL
+  COMMENT '客户头表id',
+  wx_tb_store_id          INT                      NOT NULL
+  COMMENT '门店id',
+  user_region_province    VARCHAR(100)             NOT NULL
+  COMMENT '用户区域-省',
+  user_region_city        VARCHAR(100)             NOT NULL
+  COMMENT '用户区域-市',
+  user_region_district    VARCHAR(100)             NOT NULL
+  COMMENT '用户区域-区',
+  user_store_type         VARCHAR(100)             NOT NULL
+  COMMENT '用户类型',
+  customer_user_account   VARCHAR(1000)            NOT NULL
+  COMMENT '客户用户账号',
+  customer_user_pass      VARCHAR(100) DEFAULT '1' NOT NULL
+  COMMENT '用户密码',
+  customer_user_name      VARCHAR(1000)            NOT NULL
+  COMMENT '用户姓名',
+  customer_user_email     VARCHAR(1000)            NOT NULL
+  COMMENT '用户邮箱',
+  customer_user_tel       VARCHAR(1000)            NOT NULL
+  COMMENT '用户电话',
+  wx_tb_log_head_id       INT                      NOT NULL
+  COMMENT '日志头id',
+  CONSTRAINT fk_customer_users_id
+  FOREIGN KEY (wx_tb_customer_id) REFERENCES wx_tb_customer_head (wx_tb_customer_id)
+)
+  ENGINE = InnoDB;
+
+CREATE INDEX fk_customer_users_id
+  ON wx_tb_customer_users (wx_tb_customer_id);
+
+CREATE INDEX fk_customer_users_store_id
+  ON wx_tb_customer_users (wx_tb_store_id);
+
+CREATE TABLE wx_tb_log_detail
+(
+  wx_tb_log_detail_id INT AUTO_INCREMENT
+  COMMENT '日志明细id'
+    PRIMARY KEY,
+  wx_tb_log_head_id   INT                                NULL
+  COMMENT '日志头id',
+  Operator            VARCHAR(1000)                      NOT NULL
+  COMMENT '操作人',
+  create_time         DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
+  COMMENT '创建时间',
+  last_update_time    DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL
+  COMMENT '最后修改时间',
+  operation_detail    VARCHAR(1000)                      NOT NULL
+  COMMENT '操作明细'
+)
+  ENGINE = InnoDB;
+
+CREATE INDEX fk_log_head_id
+  ON wx_tb_log_detail (wx_tb_log_head_id);
+
+CREATE TABLE wx_tb_log_head
+(
+  wx_tb_log_head_id INT AUTO_INCREMENT
+  COMMENT '日志头id'
+    PRIMARY KEY,
+  table_name        VARCHAR(1000) NOT NULL
+  COMMENT '操作表名'
+)
+  ENGINE = InnoDB;
+
+ALTER TABLE wx_tb_log_detail
+  ADD CONSTRAINT fk_log_head_id
+FOREIGN KEY (wx_tb_log_head_id) REFERENCES wx_tb_log_head (wx_tb_log_head_id);
+
+CREATE TABLE wx_tb_store_address
+(
+  wx_tb_store_address_id INT AUTO_INCREMENT
+  COMMENT '门店地址id'
+    PRIMARY KEY,
+  wx_tb_store_id         INT                     NOT NULL
+  COMMENT '门店id',
+  address                VARCHAR(1000)           NOT NULL
+  COMMENT '地址',
+  province               VARCHAR(255)            NOT NULL
+  COMMENT '省',
+  city                   VARCHAR(255)            NOT NULL
+  COMMENT '市',
+  district               VARCHAR(255)            NOT NULL
+  COMMENT '区',
+  street                 VARCHAR(255) DEFAULT '' NOT NULL
+  COMMENT '街道',
+  street_number          VARCHAR(255) DEFAULT '' NOT NULL
+  COMMENT '门牌',
+  lat                    VARCHAR(1000)           NOT NULL
+  COMMENT '纬度',
+  lng                    VARCHAR(1000)           NOT NULL
+  COMMENT '经度',
+  wx_tb_log_head_id      INT                     NOT NULL
+  COMMENT '日志头id'
+)
+  ENGINE = InnoDB;
+
+CREATE INDEX fk_store_address_id
+  ON wx_tb_store_address (wx_tb_store_id);
+
+CREATE TABLE wx_tb_store_list
+(
+  wx_tb_store_id    INT AUTO_INCREMENT
+  COMMENT '门店id'
+    PRIMARY KEY,
+  wx_tb_customer_id INT           NOT NULL
+  COMMENT '客户头表id',
+  store_name        VARCHAR(1000) NOT NULL
+  COMMENT '门店名称',
+  store_type        VARCHAR(1000) NOT NULL
+  COMMENT '门店类型',
+  store_type_desc   VARCHAR(1000) NOT NULL
+  COMMENT '门店类型描述',
+  wx_tb_log_head_id INT           NOT NULL
+  COMMENT '日志头id',
+  create_time       VARCHAR(1000) NOT NULL
+)
+  ENGINE = InnoDB;
+
+ALTER TABLE wx_tb_customer_users
+  ADD CONSTRAINT fk_customer_users_store_id
+FOREIGN KEY (wx_tb_store_id) REFERENCES wx_tb_store_list (wx_tb_store_id);
+
+ALTER TABLE wx_tb_store_address
+  ADD CONSTRAINT fk_store_address_id
+FOREIGN KEY (wx_tb_store_id) REFERENCES wx_tb_store_list (wx_tb_store_id);
+
+CREATE TABLE wx_tb_store_progress
+(
+  wx_tb_store_progress_id INT AUTO_INCREMENT
+  COMMENT '门店进度id'
+    PRIMARY KEY,
+  wx_tb_store_id          INT                                NOT NULL
+  COMMENT '门店id',
+  person_charge           VARCHAR(1000)                      NULL
+  COMMENT '负责人',
+  design_area             VARCHAR(1000)                      NULL
+  COMMENT '设计面积',
+  status_seq              FLOAT                              NULL
+  COMMENT '状态顺序',
+  status                  VARCHAR(1000)                      NULL
+  COMMENT '状态',
+  start_time              DATETIME DEFAULT CURRENT_TIMESTAMP NULL
+  COMMENT '开始时间',
+  plan_start_time         DATETIME DEFAULT CURRENT_TIMESTAMP NULL
+  COMMENT '计划开始时间',
+  expected_transfer_time  DATETIME DEFAULT CURRENT_TIMESTAMP NULL
+  COMMENT '预计交接时间',
+  wx_tb_log_head_id       INT                                NOT NULL
+  COMMENT '日志头id',
+  CONSTRAINT fk_store_progress_id
+  FOREIGN KEY (wx_tb_store_id) REFERENCES wx_tb_store_list (wx_tb_store_id)
+)
+  ENGINE = InnoDB;
+
+CREATE INDEX fk_store_progress_id
+  ON wx_tb_store_progress (wx_tb_store_id);
+
