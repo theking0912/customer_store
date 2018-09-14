@@ -1,0 +1,127 @@
+page {
+  height: auto;
+}
+
+/* ---------- */
+
+.scan-body {
+  height: 100%;
+  width: 100%;
+  background-color: beige;
+}
+
+.scan-head {
+  height: 5%;
+  width: 100%;
+  display: flex;
+}
+
+.scan-head-column1 {
+  display: flex;
+  border: 2rpx black solid;
+  justify-content: center;
+  width: 50%;
+  height: 50rpx;
+  font-size: 24rpx;
+  text-align: left;
+  background: cyan;
+}
+
+.scan-head-column2 {
+  display: flex;
+  border: 2rpx black solid;
+  justify-content: center;
+  width: auto;
+  height: 50rpx;
+  text-align: left;
+  background: cyan;
+}
+
+.scan-head-column3 {
+  display: flex;
+  border: 2rpx black solid;
+  width: 28%;
+  height: 50rpx;
+  text-align: left;
+  background: cyan;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.text_style {
+  font-size: 14px;
+}
+
+.scan-text {
+  height: 87.5%;
+  width: 100%;
+  background-color: cyan;
+}
+
+.scan-column {
+  display: flex;
+}
+
+.scan-column-cell-1 {
+  display: flex;
+  border: 2rpx black solid;
+  width: 20%;
+  height: 50rpx;
+  text-align: center;
+  background: cyan;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scan-column-cell-2 {
+  display: flex;
+  border: 2rpx black solid;
+  width: 50%;
+  height: 50rpx;
+  text-align: center;
+  background: cyan;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.scan-column-cell-3 {
+  display: flex;
+  border: 2rpx black solid;
+  width: 30%;
+  height: 50rpx;
+  text-align: center;
+  background: cyan;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.empty {
+  height: 89rpx;
+  /* margin-bottom: 46px; */
+}
+
+.scan-scan {
+  height: 7.5%;
+  width: 50%;
+  background-color: cyan;
+  position: fixed;
+}
+
+.scan-scan-head {
+  display: flex;
+  flex-direction: row;
+}
+
+.scan-scan-head-cell {
+  display: flex;
+  border: 1rpx solid white;
+  justify-content: center;
+  width: 50%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}

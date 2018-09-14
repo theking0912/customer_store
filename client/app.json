@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/customer_progress/customer_progress",
+    "pages/customer_list/customer_list",
+    "pages/add_store/add_store",
+    "pages/xiala/xiala",
+    "pages/index/index",
+    "pages/test1/test1",
+    "pages/test/test",
+    "pages/scan/scan",
+    "pages/douban/douban",
+    "pages/code/code",
+    "pages/head_page/head_page",
+    "pages/navigator/navigator",
+    "pages/redirect/redirect",
+    "pages/customer_jiu/customer_jiu",
+    "pages/customer_jia/customer_jia",
+    "pages/customer_rong/customer_rong",
+    "pages/customer_yu/customer_yu",
+    "pages/customer_xian/customer_xian",
+    "pages/customer_map/customer_map",
+    "pages/customer_map_add/customer_map_add"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智能店面管理终端",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "onReachBottom": true
+  },
+  "tabBar": {
+    "color": "#dddddd",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/customer_progress/customer_progress",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-actived.png",
+        "text": "门店进度"
+      },
+      {
+        "pagePath": "pages/customer_map/customer_map",
+        "iconPath": "images/loca.png",
+        "selectedIconPath": "images/loca-actived.png",
+        "text": "地图信息"
+      },
+      {
+        "pagePath": "pages/add_store/add_store",
+        "iconPath": "images/add.png",
+        "selectedIconPath": "images/add-actived.png",
+        "text": "添加门店"
+      },
+      {
+        "pagePath": "pages/scan/scan",
+        "iconPath": "images/scan.png",
+        "selectedIconPath": "images/scan-actived.png",
+        "text": "扫码收货"
+      }
+    ]
+  }
+}

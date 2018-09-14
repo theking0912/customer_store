@@ -1,0 +1,56 @@
+<!--index.wxml-->
+<view class="userinfo">
+    <view class="search">
+      <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+      <input type="text" placeholder="输入店铺名称" placeholder-class="placeholder" bindconfirm="onBindconfirm" value='{{searchText}}' />
+      <image wx:if="{{searchPanelShow}}" src="/images/xx.png" class="xx-img" bindtap="onCancelImgTap"></image>
+    </view>
+    <view class="layout_horizontal">
+    <block wx:for="{{countData}}" wx:key="id">
+      <view class="flex-item bc_color{{index+1}}" bindtap="btnevent" data-btntype="{{item.status}}">{{item.status}} {{item.num}}</view>
+      </block>
+    </view>
+    <view class="line" style='background-color:black'></view>
+  </view>
+<!-- ------------------------------- -->
+<view class="table">
+  <!-- <view class="tr bg-w">
+    <view class="th">编号</view>
+    <view class="th">姓名</view>
+    <view class="th">年龄</view>
+  </view> -->
+
+  <!-- <view class="td" wx:for="{{listData}}" wx:key="id">
+    {{item.store_name}}</view>
+  <view class="td" wx:for="{{listData}}" wx:key="id">
+    {{item.person_charge}}</view>
+  <view class="td" wx:for="{{listData}}" wx:key="id">
+    {{item.person_charge}}</view> -->
+
+  <block wx:for="{{listData}}" wx:key="id">
+    <progress percent="{{item.status_seq}}" backgroundColor="#eeeeee" activeColor="#ff6600" show-info active />
+    <view class="li" data-index="0" bindtap="changeToggle" data-idx="{{ index }}">
+      <view class="li-left">{{item.store_name}}</view>
+      <view class="li-right">{{item.person_charge}}</view>
+    </view>
+    <view hidden="{{!selectedFlag[index]}}">
+      <view class="li bg-gray">
+        <view class="td">负责人:{{item.person_charge}}</view>
+        <view class="td">设计面积(㎡):{{item.design_area}}</view>
+        <view class="td">当前状态:{{item.status}}</view>
+        <!-- <view class="td">{{item.start_time}}</view> -->
+      </view>
+    </view>
+  </block>
+
+  <!-- <block wx:for="{{listData}}" wx:key="id">
+    <view class="tr bg-g">
+      <view class="td">{{item.store_name}}</view>
+      <view class="td">{{item.person_charge}}</view>
+      <view class="td">{{item.design_area}}</view>
+      <view class="td">{{item.status}}</view>
+      <view class="td">{{item.start_time}}</view>
+    </view>
+  </block> -->
+
+</view>

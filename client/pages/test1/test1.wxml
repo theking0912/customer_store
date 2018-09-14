@@ -1,0 +1,28 @@
+<view class="bg-white" wx:for="{{ dataInfo }}" wx:key="item">
+  <view class="data-info mt10 border-top-bottom op-active" data-idx="{{ index }}" bindtap="expandDetail">
+    <view class="op-flex-box">
+      <view class="left-box op-flex-box">
+        <span class="fb">采购子项号：{{ item.subNum }}</span>
+        <span>{{ item.grade }} / {{ item.spec }} / {{ item.weight }}吨</span>
+      </view>
+      <span class="op-down-arrow {{ item.flag? 'active' : '' }}"></span>
+    </view>
+    <progress percent="{{ item.percentage }}" backgroundColor="#eeeeee" activeColor="#ff6600" show-info active />
+  </view>
+  <!-- 展开 -->
+  <view class="data-expand p10 border-bottom" wx:if="{{ item.flag }}">
+    <!-- 生产进度 -->
+    <view class="data-progress mb10">
+      <view class="lh30 tc">生产进度</view>
+      <view class="data-table color-666 f24">
+        <view class="op-flex-box">
+          <span>
+            <image class="icon-product" src="{{ productionIcon1 }}"></image>
+            <em>材料申请</em>
+            <em>{{ productionDetail.material }}</em>
+          </span>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

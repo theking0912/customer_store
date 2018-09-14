@@ -1,0 +1,16 @@
+/**app.wxss**/
+text{
+    font-family: MicroSoft Yahei;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input{
+    font-family: MicroSoft YaHei;
+}

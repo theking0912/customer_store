@@ -1,0 +1,7 @@
+<span style="font-size:24px;">
+  <!--index.wxml-->
+  <view class="btn-area">
+    <navigator url="../navigator/navigator?title=我是navigate">跳转到新页面</navigator>
+    <navigator url="../redirect/redirect?title=我是redirect" redirect>在当前页打开</navigator>
+  </view>
+</span>

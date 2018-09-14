@@ -1,0 +1,46 @@
+<view id="adduser">  
+    <form bindsubmit="formSubmit" bindreset="formReset">  
+ 
+         <view class="section">  
+            <view class="section_title">姓名:</view>  
+            <view class='form-group'>  
+            <input type="text" class="input-text" name="name" placeholder="请输入姓名" />  
+            </view>      
+        </view>
+ 
+        <view class="section section_gap">  
+            <view class="section_title">年龄:</view>  
+            <view class='form-group'>  
+                <slider name="age" show-value ></slider>  
+            </view>      
+        </view>
+ 
+         <view class="section">  
+            <view class="section_title">手机号:</view>  
+            <view class='form-group'>  
+             <input type="text" class="input-text" name="phone" placeholder="请输入手机号" />  
+            </view>      
+        </view>
+      
+        <view class="section btn" style=" padding-left: 15px; ">  
+            <button formType="submit">提交</button>  
+            <button formType="reset">清空</button>  
+        </view>  
+    </form>  
+  
+     <!-- 黑框提示并消失 -->  
+    <toast hidden="{{toast1Hidden}}" bindchange="toast1Change">  
+        {{notice_str}}  
+    </toast>  
+    
+    <!-- 确认框 及 提示框 -->  
+    <view class="page__bd">  
+        <modal title="确认" confirm-text="确定" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="confirm_one" bindcancel="cancel_one">  
+            确认提交么？  
+        </modal>  
+        <modal class="modal" hidden="{{modalHidden2}}" no-cancel bindconfirm="modalChange2" bindcancel="modalChange2">  
+            <view> 提示 </view>  
+            <view> 清空成功 </view>  
+        </modal>  
+    </view>  
+</view> 

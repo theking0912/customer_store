@@ -1,0 +1,19 @@
+<block wx:for="{{cusData}}" wx:key="id">
+  <view class="content" navigator url="{{item.store_url}}">
+    <view class="item-left">
+      <image class="item-image" mode="{{item.mode}}" src="{{item.image_url}}"></image>
+    </view>
+    <view class="item-mid">
+      <text class="item-font">{{item.customer_name}}全国门店</text>
+    </view>
+    <navigator url="{{item.map_url}}" class="item-right">
+      <text class="item-font">地图</text>
+    </navigator>
+    <navigator url="{{item.progress_url}}" class="item-right">
+      <text class="item-font">进度</text>
+    </navigator>
+    <navigator url="{{item.add_url}}" class="item-right">
+      <text class="item-font">添加信息</text>
+    </navigator>
+  </view>
+</block>

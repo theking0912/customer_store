@@ -1,0 +1,54 @@
+/* pages/add/add.wxss */
+
+#adduser {
+  background: #fff;
+  font-size: 32rpx;
+}
+
+.form-group {
+  float: right;
+  width: 60%;
+}
+
+.section {
+  padding: 15rpx;
+  clear: both;
+  width: 90%;
+}
+
+.input-text {
+  padding: 1px;
+  background-color: #fff;
+  width: 90%;
+}
+
+.button {
+  border: 1px solid #1aad19;
+  border-radius: 2px;
+}
+
+.picker {
+  padding: 1px;
+  background-color: #fff;
+}
+
+.section__title {
+  padding: 1px;
+  background-color: #fff;
+  width: 30%;
+}
+
+.button_check {
+  padding: 1px;
+  background-color: #fff;
+  width: 20%;
+}
+
+/*横向布局  */
+
+.layout_horizontal {
+  height: 50rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}

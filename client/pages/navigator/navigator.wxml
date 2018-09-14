@@ -1,0 +1,4 @@
+<span style="font-size:24px;">
+  <!--navigatort.wxml-->
+  <view style="text-align:center"> {{title}} </view>
+</span>

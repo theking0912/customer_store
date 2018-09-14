@@ -1,0 +1,61 @@
+<view class="layout_horizontal">
+  <view class='flex-item bc_color1'>
+    <picker bindchange="bindPickerChange_province" value="{{index1}}" range="{{province_list}}">
+      <view class="picker">省：
+        <input type="hidden" height="80rpx" disabled="true" name="status" value="{{province_list[province_index]}}" />
+      </view>
+    </picker>
+  </view>
+  <view class='flex-item bc_color2'>
+    <picker bindchange="bindPickerChange_city" value="{{index2}}" range="{{city_list}}">
+      <view class="picker">市：
+        <input type="hidden" disabled="true" name="status" value="{{city_list[city_index]}}" />
+      </view>
+    </picker>
+  </view>
+  <view class='flex-item bc_color3'>
+    <picker bindchange="bindPickerChange_district" value="{{index3}}" range="{{district_list}}">
+      <view class="picker">区：
+        <input type="hidden" disabled="true" name="status" value="{{district_list[district_index]}}" />
+      </view>
+    </picker>
+  </view>
+  <view class='flex-item bc_color4'>
+    <picker bindchange="bindPickerChange_type" value="{{index4}}" range="{{store_type_list}}">
+      <view class="picker">类型：
+        <input type="hidden" disabled="true" name="status" value="{{store_type_list[type_index]}}" />
+      </view>
+    </picker>
+  </view>
+  <view class='flex-item bc_color5'>
+    <picker bindchange="bindPickerChange_status" value="{{index5}}" range="{{status_list}}">
+      <view class="picker">状态：
+        <input type="hidden" disabled="true" name="status" value="{{status_list[status_index]}}" />
+      </view>
+    </picker>
+  </view>
+  <view class='flex-item bc_color6'>
+    <picker bindchange="bindPickerChange_store" value="{{index6}}" range="{{store_list}}">
+      <view class="picker">店名：
+        <input type="hidden" disabled="true" name="status" value="{{store_list[store_index]}}" />
+      </view>
+    </picker>
+  </view>
+</view>
+<view class="table">
+  <block wx:for="{{listData}}" wx:key="id">
+    <progress percent="{{item.status_seq}}" backgroundColor="#eeeeee" activeColor="#ff6600" show-info active />
+    <view class="li" data-index="0" bindtap="changeToggle" data-idx="{{ index }}">
+      <view class="li-left">{{item.store_name}}</view>
+      <view class="li-right">{{item.person_charge}}</view>
+    </view>
+    <view hidden="{{!selectedFlag[index]}}">
+      <view class="li bg-gray">
+        <view class="td">负责人:{{item.person_charge}}</view>
+        <view class="td">设计面积(㎡):{{item.design_area}}</view>
+        <view class="td">当前状态:{{item.status}}</view>
+        <!-- <view class="td">{{item.start_time}}</view> -->
+      </view>
+    </view>
+  </block>
+</view>

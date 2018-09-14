@@ -1,0 +1,7 @@
+<view>{{address_components.province}}</view>
+<view>{{address_components.city}}</view>
+<view>{{address_components.district}}</view>
+<view>{{address_components.street}}</view>
+<view>{{address_components.street_number}}</view>
+<view>{{location.lng}}</view>
+<view>{{location.lat}}</view>

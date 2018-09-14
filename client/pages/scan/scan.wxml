@@ -1,0 +1,79 @@
+<!-- <view class="scan-body"> -->
+<view class="scan-head">
+  <view class="scan-head-column1" bindtap="getOrder">
+    <view class='form-group'>
+      <input type="text" class="input-text" name="order_number" placeholder="请输入订单号" />
+    </view>
+    <!-- <text name="head_order_number" class="text_style">订单号:{{head_order_number}}</text> -->
+  </view>
+  <view class="scan-head-column1" bindtap="getOrder">
+    <view class='form-group'>
+      <input type="text" class="input-text" name="line_number" placeholder="请输入行号" />
+    </view>
+    <!-- <view name="head_order_line" class="scan-head-column2">
+        <text class="text_style">行号:{{head_order_line}}</text>
+      </view> -->
+  </view>
+  <view class="scan-head-column3">
+    <text class="text_style">{{store_weight/100}}</text>
+  </view>
+</view>
+<!-- <view class="scan-text"> -->
+<view class="scan-column">
+  <view class="scan-column-cell-1">
+    <text class='text'>序号</text>
+  </view>
+  <view class="scan-column-cell-3">
+    <text class='text'>单件重量</text>
+  </view>
+  <view class="scan-column-cell-2">
+    <text class='text'>生产日期</text>
+  </view>
+</view>
+<block wx:for="{{listData}}" wx:key="id">
+  <view class="scan-column">
+    <view class="scan-column-cell-1">
+      <text class='text'>{{index+1}}</text>
+    </view>
+    <view class="scan-column-cell-3">
+      <text class='text'>{{item.weight/100}}</text>
+    </view>
+    <view class="scan-column-cell-2">
+      <text class='text'>{{item.production_time}}</text>
+    </view>
+  </view>
+</block>
+
+<view class="scan-scan-head">
+  <view style="width:50%;height:92rpx;">
+    <button class="scan-scan-head-cell" type="primary" bindtap="scan" id="scan">扫一扫</button>
+  </view>
+  <view style="width:50%;height:92rpx;">
+    <button class="scan-scan-head-cell" type="primary" bindtap="redirect_index" formType="submit">提交</button>
+  </view>
+</view>
+<!-- <view class="empty"></view> -->
+<!-- </view> -->
+<!-- <view class="scan-scan-head">
+  <button class="scan-scan-head-cell" type="primary" bindtap="scan" id="scan">扫一扫</button>
+  <button class="scan-scan-head-cell" type="primary" bindtap="redirect_index" formType="submit">提交</button>
+</view> -->
+
+<!-- </view> -->
+
+<!-- <view class='scan-body'>
+  <view class='scan-text'></view>
+  <view class="scan-scan">
+    <button type="primary" bindtap="scan" id="scan">扫一扫</button>
+  </view>
+</view> -->
+
+
+
+
+<!-- <view>
+  <text class='text'>{{img}}</text>
+</view>
+<view class="view">
+  <button type="primary" bindtap="scan" id="scan">扫一扫</button>
+</view> -->

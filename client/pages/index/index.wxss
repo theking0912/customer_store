@@ -1,0 +1,227 @@
+/**index.wxss**/
+
+.bc_color1 {
+  border: 4rpx solid white;
+  width: 150rpx;
+  background: #ff210b;
+  color: #12ff3a;
+  font-size: 14px;
+  height: 50rpx;
+}
+
+.bc_color2 {
+  border: 4rpx solid white;
+  width: 150rpx;
+  color: #14a9ff;
+  background: #ffae00;
+  font-size: 14px;
+  height: 50rpx;
+}
+
+.bc_color3 {
+  border: 4rpx solid white;
+  width: 150rpx;
+  font-size: 14px;
+  color: #77298a;
+  background: #fff70c;
+  height: 50rpx;
+}
+
+.bc_color4 {
+  border: 4rpx solid white;
+  width: 150rpx;
+  background: #12ff3a;
+  color: #ff210b;
+  font-size: 14px;
+  height: 50rpx;
+}
+
+.bc_color5 {
+  border: 4rpx solid white;
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 14px;
+  background: #1cffb2;
+}
+
+.bc_color6 {
+  border: 4rpx solid white;
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 14px;
+  color: #ffae00;
+  background: #14a9ff;
+}
+
+.bc_color7 {
+  border: 4rpx solid white;
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 14px;
+  color: #fff70c;
+  background: #77298a;
+}
+
+.search-img {
+  margin: auto 0 auto 20rpx;
+}
+
+.search input {
+  height: 100%;
+  width: 500rpx;
+  margin-left: 20px;
+  font-size: 28rpx;
+}
+
+.search-panel {
+  position: absolute;
+  top: 80rpx;
+}
+
+.xx-img {
+  height: 30rpx;
+  width: 30rpx;
+  margin: auto 0 auto 10rpx;
+}
+
+.placeholder {
+  font-size: 14px;
+  color: #d1d1d1;
+  margin-left: 20rpx;
+}
+
+.search {
+  background-color: #f2f2f2;
+  height: 80rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+/*横向布局  */
+
+.layout_horizontal {
+  height: 50rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+}
+
+/*划线  */
+
+.line {
+  background-color: blue;
+  height: 0rpx;
+  width: 100%;
+}
+
+/* -------------------------- */
+
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 1.5rem;
+  align-items: center;
+}
+
+.td {
+  width: 50%;
+  justify-content: center;
+  text-align: left;
+  font-size: 25rpx;
+}
+
+.bg-w {
+  background: snow;
+  height: 50rpx;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 40%;
+  justify-content: center;
+  background: #36f;
+  color: #fff;
+  display: flex;
+  height: 1rem;
+  align-items: center;
+}
+
+/* ------折叠布局------ */
+
+.li {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  width: 92%;
+  padding: 0 4%;
+  align-items: center;
+  height: 60rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #f1f1f1;
+}
+
+.li-left {
+  align-items: center;
+  justify-content: left;
+}
+
+.li-right {
+  align-items: center;
+  justify-content: right;
+}
+
+.bg-gray {
+  background-color: #ccc !important;
+  border-bottom: 1rpx solid #fff !important;
+  font-size: 20rpx;
+}
+
+/* -----进度条----- */
+
+.data-list .data-expand .data-progress {
+  background: #f8f8f8;
+}
+
+.data-list .data-expand .data-progress .data-table {
+  padding: 20rpx;
+}
+
+.data-list .data-expand .data-progress .data-table .icon-right {
+  width: 22rpx;
+  height: 14rpx;
+  position: relative;
+  top: -45rpx;
+}
+
+.data-list .data-expand .data-progress .data-table .icon-right.long {
+  width: 38rpx;
+}
+
+.data-list .data-expand .data-progress .data-table > .op-flex-box span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.data-list .data-expand .data-progress .data-table > .op-flex-box span .icon-product {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.data-list .data-expand .data-progress .data-table > .op-flex-box span em {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #666;
+}

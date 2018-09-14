@@ -1,0 +1,44 @@
+.data-list .data-info {
+  padding: 4rpx 20rpx;
+}
+.data-list .data-info .left-box {
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  line-height: 60rpx;
+}
+.data-list .data-info .op-down-arrow {
+  margin-left: 50rpx;
+  margin-right: 0;
+}
+.data-list .data-expand .data-progress {
+  background: #f8f8f8;
+}
+.data-list .data-expand .data-progress .data-table {
+  padding: 20rpx;
+}
+.data-list .data-expand .data-progress .data-table .icon-right {
+  width: 22rpx;
+  height: 14rpx;
+  position: relative;
+  top: -45rpx;
+}
+.data-list .data-expand .data-progress .data-table .icon-right.long {
+  width: 38rpx;
+}
+.data-list .data-expand .data-progress .data-table > .op-flex-box span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.data-list .data-expand .data-progress .data-table > .op-flex-box span .icon-product {
+  width: 60rpx;
+  height: 60rpx;
+  margin-bottom: 20rpx;
+}
+.data-list .data-expand .data-progress .data-table > .op-flex-box span em {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #666666;
+}

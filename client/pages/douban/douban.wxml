@@ -1,0 +1,6 @@
+<!--pages/douban/douban.wxml-->
+<block wx:for="{{listData}}" wx:key="id">
+    <view class="tr bg-g">
+      <view class="td">{{item}}</view>
+    </view>
+  </block>
